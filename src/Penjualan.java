@@ -9,6 +9,7 @@ public class Penjualan {
     int tunai;
 
     public Transaksi trans;
+    int jumlah;
 
     public Penjualan(int hargaJual, int jumlah, int total, int tunai, Transaksi trans) {
         this.barang = barang;

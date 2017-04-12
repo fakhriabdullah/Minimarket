@@ -29,14 +29,14 @@ public class Transaksi {
     }
 }
 
-class Penjualan extends Transaksi{
+class TransPenjualan extends Transaksi{
     String barang;
     int hargaJual;
     int jumlah;
     int total;
     int tunai;
 
-    public Penjualan(int id, String tgl, String barang, int hargaJual, int jumlah, int total, int tunai) {
+    public TransPenjualan(int id, String tgl, String barang, int hargaJual, int jumlah, int total, int tunai) {
         this.id = id;
         this.tgl = tgl;
         this.barang = barang;
@@ -75,23 +75,21 @@ class Penjualan extends Transaksi{
     }
 
     public static void main(String[] args) {
-        Penjualan p = new Penjualan(1, "2-11-2017","Pepsodent", 3000, 3, 9000, 10000);
+        TransPenjualan p = new TransPenjualan(1, "2-11-2017","Pepsodent", 3000, 3, 9000, 10000);
 
         p.printTransaksiPenjualan();
     }
 }
 
 class Pembelian extends Transaksi{
-    private HashMap<Integer,Barang> hmBarang = new HashMap<>();
     int hargaBeli;
     int jumlah;
     int total;
+    private HashMap<Integer,Barang> hmBarang = new HashMap<>();
 
-    public Pembelian (Barang b, int hargaBeli, int jumlah, int total){
-        this.hmBarang.put(b.idBarang,b);
+    public Pembelian (int hargaBeli, int jumlah){
         this.hargaBeli = hargaBeli;
         this.jumlah = jumlah;
-        this.total = total;
     }
 
     public int setHitungTotalHargaPembelian(){
@@ -102,14 +100,46 @@ class Pembelian extends Transaksi{
         return total;
     }
 
-    public int getHitungTotalHargaPembelian(){
+    public int getHitungTotalHargaPembelian() {
+        int total = setHitungTotalHargaPembelian();
         return total;
     }
 
-    public void setBarang(){}
-    public void getBarang(){}
-    public int setHargaBeli(){return total;}
-    public int getHargaBeli(){return total;}
+    public void setBarang(Barang b){
+        hmBarang.put(b.idBarang,b);
+    }
+
+    public void getBarang(){
+        for (Barang b: hmBarang.values()){
+            b.printBarang();
+        }
+        System.out.println("--------------------");
+    }
+
+    public int setHargaBeli(){return hargaBeli;}
+
+    public int getHargaBeli(){return hargaBeli;}
+
     public int setJumlah(){return total;}
+
     public int getJumlah(){return total;}
+
+    public void print(){
+        System.out.println("======================");
+        System.out.println("===Daftar Pembelian===");
+        this.getBarang();
+        total = getHitungTotalHargaPembelian();
+        System.out.println("Total Harga Pembelian:"+total);
+    }
+
+    public static void main(String[] args) {
+        Pembelian pembelian = new Pembelian(5000,100);
+        Barang brg = new Barang(1, "Indomie", 2500, 2000, "2 Juni 2018", 20);
+        pembelian.setBarang(brg);
+        brg = new Barang(2, "Clear", 2500, 2000, "2 Juni 2018", 30);
+        pembelian.setBarang(brg);
+        brg = new Barang(2, "Gatsby", 20000, 9000, "2 Juni 2018", 15);
+        pembelian.setBarang(brg);
+        pembelian.print();
+    }
 }

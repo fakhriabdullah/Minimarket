@@ -1,8 +1,8 @@
 import java.util.ArrayList;
-
 /**
  * Created by Handoko on 4/12/2017.
  */
+
 class Penjualan extends Transaksi{
     Barang barang;
     int hargaJual;
@@ -48,12 +48,12 @@ class Penjualan extends Transaksi{
         System.out.println("Jumlah Barang : "+jumlah);
         System.out.println("Total Bayar : "+total);
         System.out.println("Tunai : "+tunai);
-
     }
+
+
 
     public static void main(String[] args) {
         Penjualan p = new Penjualan(3000, 3, 9000, 10000);
         p.printTransaksiPenjualan();
-
     }
 }

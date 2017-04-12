@@ -1,44 +1,59 @@
+import java.util.ArrayList;
+
 /**
  * Created by Handoko on 4/12/2017.
  */
-public class Penjualan {
-    String barang;
+class Penjualan extends Transaksi{
+    Barang barang;
     int hargaJual;
     int jumlah;
     int total;
     int tunai;
 
-    public Transaksi trans;
+    private ArrayList<Transaksi> transaksiPenjualan = new ArrayList<>();
 
-
-    public Penjualan(int hargaJual, int jumlah, int total, int tunai, Transaksi trans) {
-        this.barang = barang;
+    public Penjualan(int hargaJual, int jumlah, int total, int tunai) {
         this.hargaJual = hargaJual;
         this.jumlah = jumlah;
         this.total = total;
         this.tunai = tunai;
-        this.trans = trans;
     }
 
-    public int getTotalHargaPenjualan() {
-        return total;
-    }
-
-    public int getHargaJual(){
+    public int getHargaJual() {
         return hargaJual;
     }
 
-    public int getJumlah(){
+    public int getJumlah() {
         return jumlah;
     }
 
-    public int getTunai(){
+    public int getTotal() {
+        return total;
+    }
+
+    public int getTunai() {
         return tunai;
     }
 
-    public static void main(String[] args) {
-        Transaksi trans;
+    public int hitungKembalian(int uang){
+        return uang;
+    }
+
+    public void printTransaksiPenjualan()
+    {
+        System.out.println("ID Transaksi : "+id);
+        System.out.println("Tgl Transaksi : "+tgl);
+        System.out.println("Barang : "+barang);
+        System.out.println("Harga Jual : "+hargaJual);
+        System.out.println("Jumlah Barang : "+jumlah);
+        System.out.println("Total Bayar : "+total);
+        System.out.println("Tunai : "+tunai);
 
     }
 
+    public static void main(String[] args) {
+        Penjualan p = new Penjualan(3000, 3, 9000, 10000);
+        p.printTransaksiPenjualan();
+
+    }
 }

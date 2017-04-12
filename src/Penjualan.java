@@ -41,4 +41,6 @@ public class Penjualan {
 
     }
 
+    public void printTransaksiPenjualan() {
+    }
 }

@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 /**
  * Created by Handoko on 4/11/2017.
  */
@@ -74,7 +76,38 @@ class Penjualan extends Transaksi{
 
     public static void main(String[] args) {
         Penjualan p = new Penjualan(1, "2-11-2017","Pepsodent", 3000, 3, 9000, 10000);
+
         p.printTransaksiPenjualan();
     }
 }
 
+class Pembelian extends Transaksi{
+    private HashMap<Integer,Barang> hmBarang = new HashMap<>();
+    int hargaBeli;
+    int jumlah;
+    int total;
+
+    public Pembelian (Barang b, int hargaBeli, int jumlah, int total){
+        this.hmBarang.put(b.id,b);
+        this.hargaBeli = hargaBeli;
+        this.jumlah = jumlah;
+        this.total = total;
+    }
+
+    public int setHitungTotalHargaPembelian(){
+        int total=0;
+        for(Barang b:hmBarang.values()){
+            total = total+b.harga*jumlah;
+        }
+        return total;
+    }
+
+    public int getHitungTotalHargaPembelian(){return total;}
+
+    public void setBarang(){}
+    public void getBarang(){}
+    public int setHargaBeli(){return total;}
+    public int getHargaBeli(){return total;}
+    public int setJumlah(){return total;}
+    public int getJumlah(){return total;}
+}

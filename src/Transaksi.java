@@ -20,4 +20,6 @@ public class Transaksi {
     public void setTgl(String tgl) {
         this.tgl = tgl;
     }
+
+
 }

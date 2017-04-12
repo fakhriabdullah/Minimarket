@@ -103,10 +103,6 @@ class Pembelian extends Transaksi{
     }
 
     public int getHitungTotalHargaPembelian(){
-        int total=0;
-        for(Barang b:hmBarang.values()){
-            total = total+b.harga*jumlah;
-        }
         return total;
     }
 

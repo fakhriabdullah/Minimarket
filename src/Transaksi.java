@@ -88,7 +88,7 @@ class Pembelian extends Transaksi{
     int total;
 
     public Pembelian (Barang b, int hargaBeli, int jumlah, int total){
-        this.hmBarang.put(b.id,b);
+        this.hmBarang.put(b.idBarang,b);
         this.hargaBeli = hargaBeli;
         this.jumlah = jumlah;
         this.total = total;
@@ -97,7 +97,7 @@ class Pembelian extends Transaksi{
     public int setHitungTotalHargaPembelian(){
         int total=0;
         for(Barang b:hmBarang.values()){
-            total = total+b.harga*jumlah;
+            total = total+b.hargaBeli*jumlah;
         }
         return total;
     }

@@ -4,6 +4,7 @@
 public class Transaksi {
     int id;
     String tgl;
+    int i;
 
     public int getId() {
         return id;

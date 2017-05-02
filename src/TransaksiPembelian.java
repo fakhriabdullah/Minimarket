@@ -30,13 +30,23 @@ public class TransaksiPembelian {
         this.waktuPembelian = waktuPembelian;
     }
 
-    public void print(){}
+    public void print(){
+        System.out.println("Nama Supplier : "+supplier.namaSupplier);
+        System.out.println("Waktu Pembelian : "+waktuPembelian);
+        for (Pembelian p : arrPembelian) {
+            p.print();
+        }
+        System.out.println("Total Pembelian : "+hitungTotalPembelian());
+    }
 
     public static void main(String[] args) {
         Supplier supplier = new Supplier(1,"indofood","jakarta","021-99111");
         TransaksiPembelian transPembelian = new TransaksiPembelian(supplier);
-        transPembelian.waktuPembelian = "08 April 2017";
-        System.out.println("Nama Supplier : "+supplier.namaSupplier);
-        System.out.println("Total Penjualan : "+transPembelian.hitungTotalPembelian());
+        transPembelian.setWaktuPembelian("08 April 2017");
+        Pembelian p = new Pembelian(5000,"rinso");
+        p.setJumlah(100);
+        transPembelian.addPembelian(p);
+        transPembelian.print();
+
     }
 }

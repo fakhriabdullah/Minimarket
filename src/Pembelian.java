@@ -23,6 +23,12 @@ class Pembelian{
 
     public int getJumlah(){return jumlah;}
 
+    public void print(){
+        System.out.println("Nama Barang : "+this.getBarang());
+        System.out.println("Harga Beli : "+this.getHargaBeli());
+        System.out.println("Jumlah beli : "+this.getJumlah());
+    }
+
     public static void main(String[] args) {
         Pembelian pembelian = new Pembelian(5000,"Rinso");
         pembelian.setJumlah(100);

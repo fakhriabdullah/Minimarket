@@ -56,11 +56,11 @@ class Pembelian extends Transaksi{
 
     public static void main(String[] args) {
         Pembelian pembelian = new Pembelian(5000,100);
-        Barang brg = new Barang(1, "Indomie", 2500, 2000, "2 Juni 2018", 20);
+        Barang brg = new Barang(1, "Indomie", 2500, 2000, "2 Juni 2018", 20, "Makanan");
         pembelian.setBarang(brg);
-        brg = new Barang(2, "Clear", 2500, 2000, "2 Juni 2018", 30);
+        brg = new Barang(2, "Clear", 2500, 2000, "2 Juni 2018", 30, "Alat Mandi");
         pembelian.setBarang(brg);
-        brg = new Barang(2, "Gatsby", 20000, 9000, "2 Juni 2018", 15);
+        brg = new Barang(2, "Gatsby", 20000, 9000, "2 Juni 2018", 15, "Minyak Rambut");
         pembelian.setBarang(brg);
         pembelian.print();
     }

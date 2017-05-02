@@ -21,7 +21,7 @@ public class TransaksiPenjualan {
     public int hitungTotalPenjualan() {
         int totalPenjualan = 0;
         for (Penjualan p : arrPenjualan) {
-            totalPenjualan = totalPenjualan + (p.jumlah * p.hargaJual);
+            totalPenjualan = totalPenjualan + (p.getJumlah() * p.getHargaJual());
         }
         return totalPenjualan;
     }
@@ -49,6 +49,7 @@ public class TransaksiPenjualan {
         p.setJumlah(1);
         transP.addPenjualan(p);
         System.out.println("Nama Karyawan : "+kasir.namaKaryawan);
+        System.out.println("Tanggal : "+transP.waktuPembelian);
         System.out.println("Total Penjualan : "+transP.hitungTotalPenjualan());
         System.out.println("Tunai : "+transP.tunai);
         System.out.println("Kembalian : "+transP.hitungKembalianPenjualan());

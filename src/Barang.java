@@ -1,5 +1,6 @@
 /**
- * Created by fakhriabdullah on 11/04/2017.
+ * Created by Yusup Andrianto
+ * 1400429
  */
 public class Barang {
     int idBarang;
@@ -7,15 +8,18 @@ public class Barang {
     int hargaJual;
     int hargaBeli;
     String kadaluarsa;
-    int stok;
+    int stok=0;
+    String kondisiBarang="Baik";
+    String kategori="";
 
-    public Barang(int idBarang, String namaBarang, int hargaJual, int hargaBeli, String kadaluarsa, int stok) {
+    public Barang(int idBarang, String namaBarang, int hargaJual, int hargaBeli, String kadaluarsa, int stok, String kategori) {
         this.idBarang = idBarang;
         this.namaBarang = namaBarang;
         this.hargaJual = hargaJual;
         this.hargaBeli = hargaBeli;
         this.kadaluarsa = kadaluarsa;
         this.stok = stok;
+        this.kategori= kategori;
     }
 
     public int getIdBarang() { return idBarang; }
@@ -38,6 +42,10 @@ public class Barang {
         return stok;
     }
 
+    public String getKategori(){ return kategori;}
+
+    public String getKondisiBarang(){return kondisiBarang; }
+
     public void printBarang()
     {
         System.out.println("ID Barang : "+idBarang);
@@ -45,11 +53,13 @@ public class Barang {
         System.out.println("Harga Jual : "+hargaJual);
         System.out.println("Harga Beli : "+hargaBeli);
         System.out.println("Kadaluarsa : "+kadaluarsa);
+        System.out.println("Kategori : "+kategori);
+        System.out.println("Kondisi Barang : "+kondisiBarang);
         System.out.println("Stok : "+stok);
     }
 
     public static void main(String[] args){
-        Barang brg = new Barang(1, "Indomie", 2500, 2000, "2 Juni 2018", 20);
+        Barang brg = new Barang(1, "Indomie", 2500, 2000, "2 Juni 2018", 20, "Makanan" );
         brg.printBarang();
     }
 

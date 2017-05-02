@@ -40,6 +40,16 @@ public class TransaksiPenjualan {
         this.waktuPembelian = waktuPembelian;
     }
 
+    public void printPenjualan() {
+        for (Penjualan p : arrPenjualan) {
+            System.out.println("Nama Karyawan : " + kasir.namaKaryawan);
+            System.out.println("Tanggal : " + waktuPembelian);
+            System.out.println("Total Penjualan : " + hitungTotalPenjualan());
+            System.out.println("Tunai : " + tunai);
+            System.out.println("Kembalian : " + hitungKembalianPenjualan());
+        }
+    }
+
     public static void main(String[] args) {
         Karyawan kasir = new Karyawan(1, "Budi", "Gerlong", "0888811212");
         TransaksiPenjualan transP = new TransaksiPenjualan(kasir);
@@ -48,10 +58,6 @@ public class TransaksiPenjualan {
         transP.waktuPembelian = "08 April 2017";
         p.setJumlah(1);
         transP.addPenjualan(p);
-        System.out.println("Nama Karyawan : "+kasir.namaKaryawan);
-        System.out.println("Tanggal : "+transP.waktuPembelian);
-        System.out.println("Total Penjualan : "+transP.hitungTotalPenjualan());
-        System.out.println("Tunai : "+transP.tunai);
-        System.out.println("Kembalian : "+transP.hitungKembalianPenjualan());
+        transP.printPenjualan();
     }
 }

@@ -29,6 +29,9 @@ public class Penjualan {
 
     public static void main(String[] args) {
         Penjualan jual = new Penjualan("Rinso", 25000);
-        jual.setJumlah(3);
+        jual.setJumlah(1);
+        System.out.println("Nama Barang : "+jual.barang);
+        System.out.println("Harga Jual : "+jual.hargaJual);
+        System.out.println("Jumlah : "+jual.jumlah);
     }
 }

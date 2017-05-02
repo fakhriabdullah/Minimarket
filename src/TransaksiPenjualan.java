@@ -47,7 +47,7 @@ public class TransaksiPenjualan {
         transP.waktuPembelian = "08 April 2017";
         System.out.println("Nama Karyawan : "+kasir.namaKaryawan);
         System.out.println("Total Penjualan : "+transP.hitungTotalPenjualan());
-        System.out.println("Nama Karyawan : "+);
+        System.out.println("Nama Karyawan : "+kasir.namaKaryawan);
 
     }
 }

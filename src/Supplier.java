@@ -1,5 +1,5 @@
 /**
- * Created by fakhriabdullah on 11/04/2017.
+ * Created by Anyaman Benang on 01/05/2017.
  */
 public class Supplier {
     int idSupplier;
@@ -42,4 +42,5 @@ public class Supplier {
     public static void main(String[] args){
         Supplier spl = new Supplier(1,"PT. Rama Sinta","Jl. Geget Winda", "021-383838");
     }
+
 }

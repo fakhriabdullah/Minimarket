@@ -1,5 +1,5 @@
 /**
- * Created by fakhriabdullah on 11/04/2017.
+ * Created by Anyaman Benang on 01/05/2017.
  */
 public class Karyawan {
     int idKaryawan;
@@ -35,3 +35,4 @@ public class Karyawan {
 
     }
 }
+

@@ -48,14 +48,15 @@ public class TransaksiPembelian {
     }
 
     public static void main(String[] args) {
-//        Supplier supplier = new Supplier(1,"indofood","jakarta","021-99111");
-//        TransaksiPembelian transPembelian = new TransaksiPembelian(supplier);
-//        Date hariIni = new Date();
-//        transPembelian.setWaktuPembelian(hariIni);
-//        Pembelian p = new Pembelian(5000,"rinso");
-//        p.setJumlah(100);
-//        transPembelian.addPembelian(p);
-//        transPembelian.print();
+        Supplier supplier = new Supplier(1,"indofood","jakarta","021-99111");
+        TransaksiPembelian transPembelian = new TransaksiPembelian(1,supplier);
+        Date hariIni = new Date();
+        transPembelian.setWaktuPembelian(hariIni);
+        Barang brg = new Barang(1,"Rinsi",1000,900,"18-12-2020",0,"Sabun");
+        Pembelian p = new Pembelian(5000,brg);
+        p.setJumlah(100);
+        transPembelian.addPembelian(p);
+        transPembelian.print();
 
     }
 }

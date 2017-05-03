@@ -52,7 +52,7 @@ public class Utama {
         {
             System.out.println("Stok Barang Habis");
         }
-        b = gudang.cariBarang(1);
+        b = gudang.cariBarang(2);
         if(b!=null)
         {
             if(b!=null)

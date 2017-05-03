@@ -27,6 +27,12 @@ public class Penjualan {
         return jumlah;
     }
 
+    public void print(){
+        System.out.println("Nama Barang : "+this.getBarang().namaBarang);
+        System.out.println("Harga Jual : "+this.getHargaJual());
+        System.out.println("Jumlah Jual : "+this.getJumlah());
+    }
+
     public static void main(String[] args) {
 //        Penjualan jual = new Penjualan("Rinso", 25000);
 //        jual.setJumlah(1);

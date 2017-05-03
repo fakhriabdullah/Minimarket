@@ -50,52 +50,27 @@ public class TransaksiPenjualan {
         System.out.println("Nama Karyawan : "+kasir.namaKaryawan);
         System.out.println("Waktu Penjualan : "+dateFormat.format(waktuPenjualan));
         for (Penjualan p : arrPenjualan) {
-            printPenjualan();
+            p.print();
         }
         System.out.println("Total Penjualan : "+hitungTotalPenjualan());
+        System.out.println("Cash : "+tunai);
+        System.out.println("Kembalian : "+hitungKembalianPenjualan());
     }
 
     public static void main(String[] args) {
-//        Karyawan kasir = new Karyawan(1, "Budi", "Gerlong", "0888811212");
-//        TransaksiPenjualan transP = new TransaksiPenjualan(kasir);
-////        Penjualan p = new Penjualan("Rinso", 25000);
-//        transP.setTunai(50000);
-//        Date date = new Date();
-//        transP.setWaktuPembelian(date);
-//        p.setJumlah(1);
-//        transP.addPenjualan(p);
-//        transP.printPenjualan();
         Karyawan kasir = new Karyawan(1, "Budi", "Gerlong", "0888811212");
         TransaksiPenjualan transaksiPenjualan = new TransaksiPenjualan(1,kasir);
-        Gudang gudang = new Gudang();
-        gudang.isiGudang();
-        Barang b = gudang.cariBarang(1);
-        if(b!=null)
-        {
-            Penjualan p = new Penjualan(b.idBarang, b.getHargaJual());
-            p.setJumlah(1);
-            transaksiPenjualan.addPenjualan(p);
-        }else
-        {
-            System.out.println("Stok Barang Habis");
-        }
-        b = gudang.cariBarang(1);
-        if(b!=null)
-        {
-            if(b!=null)
-            {
-                Penjualan p = new Penjualan(b, b.getHargaJual());
-                p.setJumlah(2);
-                transaksiPenjualan.addPenjualan(p);
-            }else
-            {
-                System.out.println("Stok Barang Habis");
-            }
-        }
+        Barang b = new Barang(1,"Rinsi",1000,900,"18-12-2020",0,"Sabun");
+        Penjualan p = new Penjualan(b, b.getHargaJual());
+        p.setJumlah(1);
+        transaksiPenjualan.addPenjualan(p);
+        Barang b2 = new Barang(1,"Indomi",2000,1500,"18-12-2020",0,"Makanan");
+        p = new Penjualan(b2, b2.getHargaJual());
+        p.setJumlah(2);
+        transaksiPenjualan.addPenjualan(p);
         transaksiPenjualan.setTunai(100000);
         Date date = new Date();
         transaksiPenjualan.setWaktuPenjualan(date);
-       // minimarket.addPenjualan(transaksiPenjualan);
         System.out.println();
         System.out.println("Nota Penjualan");
         System.out.println("====================");

@@ -53,6 +53,9 @@ public class Laporan {
         Integer masuk=0, keluar=0;
         DateFormat dateFormat = new SimpleDateFormat("MM-yyyy");
         Date hariIni=new Date();
+        System.out.println("==========================");
+        System.out.println("LAPORAN");
+        System.out.println("==========================");
         System.out.println("PENJUALAN HARI INI");
         System.out.println("Nama Karyawan|Waktu|Total Penjualan|Tunai|Kembalian|");
         for(TransaksiPenjualan p : arrPenjualan.values())

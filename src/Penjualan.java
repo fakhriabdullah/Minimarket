@@ -3,10 +3,10 @@
  */
 
 public class Penjualan {
-    String barang;
+    Barang barang;
     int hargaJual, jumlah;
 
-    public Penjualan(String barang, int hargaJual) {
+    public Penjualan(Barang barang, int hargaJual) {
         this.barang = barang;
         this.hargaJual = hargaJual;
     }
@@ -15,7 +15,7 @@ public class Penjualan {
         this.jumlah = jumlah;
     }
 
-    public String getBarang() {
+    public Barang getBarang() {
         return barang;
     }
 
@@ -28,10 +28,10 @@ public class Penjualan {
     }
 
     public static void main(String[] args) {
-        Penjualan jual = new Penjualan("Rinso", 25000);
-        jual.setJumlah(1);
-        System.out.println("Nama Barang : "+jual.barang);
-        System.out.println("Harga Jual : "+jual.hargaJual);
-        System.out.println("Jumlah : "+jual.jumlah);
+//        Penjualan jual = new Penjualan("Rinso", 25000);
+//        jual.setJumlah(1);
+//        System.out.println("Nama Barang : "+jual.barang);
+//        System.out.println("Harga Jual : "+jual.hargaJual);
+//        System.out.println("Jumlah : "+jual.jumlah);
     }
 }

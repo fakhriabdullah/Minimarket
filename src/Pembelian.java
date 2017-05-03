@@ -4,14 +4,14 @@
 class Pembelian{
     int hargaBeli;
     int jumlah;
-    String barang;
+    Barang barang;
 
-    public Pembelian (int hargaBeli, String barang){
+    public Pembelian (int hargaBeli, Barang barang){
         this.hargaBeli = hargaBeli;
         this.barang = barang;
     }
 
-    public String getBarang() {
+    public Barang getBarang() {
         return barang;
     }
 
@@ -24,13 +24,12 @@ class Pembelian{
     public int getJumlah(){return jumlah;}
 
     public void print(){
-        System.out.println("Nama Barang : "+this.getBarang());
+        System.out.println("Nama Barang : "+this.getBarang().namaBarang);
         System.out.println("Harga Beli : "+this.getHargaBeli());
         System.out.println("Jumlah beli : "+this.getJumlah());
     }
 
     public static void main(String[] args) {
-        Pembelian pembelian = new Pembelian(5000,"Rinso");
-        pembelian.setJumlah(100);
+//        pembelian.setJumlah(100);
     }
 }

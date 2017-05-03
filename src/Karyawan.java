@@ -30,4 +30,8 @@ public class Karyawan {
         return kontak;
     }
 
+    public static void main(String[] args){
+        Karyawan krn = new Karyawan(1,"Rijaalul","Jl. Antapani", "082116916999");
+
+    }
 }

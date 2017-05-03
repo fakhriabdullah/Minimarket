@@ -9,6 +9,7 @@ import java.util.Date;
  * Created by anwar on 02/05/2017.
  */
 public class TransaksiPembelian {
+    int idTransaksiPembelian;
     int total;
     Supplier supplier;
     Date waktuPembelian;
@@ -19,7 +20,8 @@ public class TransaksiPembelian {
         arrPembelian.add(p);
     }
 
-    public TransaksiPembelian(Supplier supplier){
+    public TransaksiPembelian(int idTransaksiPembelian,Supplier supplier){
+        this.idTransaksiPembelian=idTransaksiPembelian;
         this.supplier=supplier;
     }
 
@@ -46,14 +48,14 @@ public class TransaksiPembelian {
     }
 
     public static void main(String[] args) {
-        Supplier supplier = new Supplier(1,"indofood","jakarta","021-99111");
-        TransaksiPembelian transPembelian = new TransaksiPembelian(supplier);
-        Date hariIni = new Date();
-        transPembelian.setWaktuPembelian(hariIni);
-        Pembelian p = new Pembelian(5000,"rinso");
-        p.setJumlah(100);
-        transPembelian.addPembelian(p);
-        transPembelian.print();
+//        Supplier supplier = new Supplier(1,"indofood","jakarta","021-99111");
+//        TransaksiPembelian transPembelian = new TransaksiPembelian(supplier);
+//        Date hariIni = new Date();
+//        transPembelian.setWaktuPembelian(hariIni);
+//        Pembelian p = new Pembelian(5000,"rinso");
+//        p.setJumlah(100);
+//        transPembelian.addPembelian(p);
+//        transPembelian.print();
 
     }
 }

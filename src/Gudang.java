@@ -27,7 +27,7 @@ public class Gudang {
     {
         addBarang(new Barang(1, "Indomie", 2500, 2000, "2 Juni 2018", 20,"Makanan"));
         addBarang(new Barang(2, "Clear", 2500, 2000, "2 Juni 2018", 30,"Alat Mandi"));
-        addBarang(new Barang(2, "Gatsby", 20000, 9000, "2 Juni 2018", 15, "Minyak Rambut"));
+        addBarang(new Barang(3, "Gatsby", 20000, 9000, "2 Juni 2018", 15, "Minyak Rambut"));
     }
     public static void main (String[] args){
         Gudang gdg = new Gudang();

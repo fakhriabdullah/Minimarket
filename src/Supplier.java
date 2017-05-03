@@ -41,6 +41,5 @@ public class Supplier {
 
     public static void main(String[] args){
         Supplier spl = new Supplier(1,"PT. Rama Sinta","Jl. Geget Winda", "021-383838");
-        spl.printSupplier();
     }
 }

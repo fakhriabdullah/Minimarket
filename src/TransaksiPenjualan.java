@@ -5,9 +5,10 @@ import java.util.Date;
  * Created by Handoko on 5/2/2017.
  */
 public class TransaksiPenjualan {
+    int idTransaksiPenjualan;
     int total, tunai;
     Karyawan kasir;
-    Date waktuPembelian;
+    Date waktuPenjualan;
 
     ArrayList<Penjualan> arrPenjualan = new ArrayList<>();
 
@@ -15,7 +16,8 @@ public class TransaksiPenjualan {
         arrPenjualan.add(p);
     }
 
-    public TransaksiPenjualan(Karyawan kasir) {
+    public TransaksiPenjualan(int idTransaksiPenjualan,Karyawan kasir) {
+        this.idTransaksiPenjualan=idTransaksiPenjualan;
         this.kasir=kasir;
     }
 
@@ -37,14 +39,14 @@ public class TransaksiPenjualan {
         this.tunai = tunai;
     }
 
-    public void setWaktuPembelian(Date waktuPembelian) {
-        this.waktuPembelian = waktuPembelian;
+    public void setWaktuPenjualan(Date waktuPenjualan) {
+        this.waktuPenjualan = waktuPenjualan;
     }
 
     public void printPenjualan() {
         for (Penjualan p : arrPenjualan) {
             System.out.println("Nama Karyawan : " + kasir.namaKaryawan);
-            System.out.println("Tanggal : " + waktuPembelian);
+            System.out.println("Tanggal : " + waktuPenjualan);
             System.out.println("Total Penjualan : " + hitungTotalPenjualan());
             System.out.println("Tunai : " + tunai);
             System.out.println("Kembalian : " + hitungKembalianPenjualan());
@@ -52,14 +54,14 @@ public class TransaksiPenjualan {
     }
 
     public static void main(String[] args) {
-        Karyawan kasir = new Karyawan(1, "Budi", "Gerlong", "0888811212");
-        TransaksiPenjualan transP = new TransaksiPenjualan(kasir);
-        Penjualan p = new Penjualan("Rinso", 25000);
-        transP.setTunai(50000);
-        Date date = new Date();
-        transP.setWaktuPembelian(date);
-        p.setJumlah(1);
-        transP.addPenjualan(p);
-        transP.printPenjualan();
+//        Karyawan kasir = new Karyawan(1, "Budi", "Gerlong", "0888811212");
+//        TransaksiPenjualan transP = new TransaksiPenjualan(kasir);
+////        Penjualan p = new Penjualan("Rinso", 25000);
+//        transP.setTunai(50000);
+//        Date date = new Date();
+//        transP.setWaktuPembelian(date);
+//        p.setJumlah(1);
+//        transP.addPenjualan(p);
+//        transP.printPenjualan();
     }
 }

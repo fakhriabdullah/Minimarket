@@ -1,4 +1,9 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by anwar on 02/05/2017.
@@ -6,7 +11,7 @@ import java.util.ArrayList;
 public class TransaksiPembelian {
     int total;
     Supplier supplier;
-    String waktuPembelian;
+    Date waktuPembelian;
 
     ArrayList<Pembelian> arrPembelian = new ArrayList<>();
 
@@ -26,13 +31,14 @@ public class TransaksiPembelian {
         return totalPembelian;
     }
 
-    public void setWaktuPembelian(String waktuPembelian) {
+    public void setWaktuPembelian(Date waktuPembelian) {
         this.waktuPembelian = waktuPembelian;
     }
 
     public void print(){
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         System.out.println("Nama Supplier : "+supplier.namaSupplier);
-        System.out.println("Waktu Pembelian : "+waktuPembelian);
+        System.out.println("Waktu Pembelian : "+dateFormat.format(waktuPembelian));
         for (Pembelian p : arrPembelian) {
             p.print();
         }
@@ -42,7 +48,8 @@ public class TransaksiPembelian {
     public static void main(String[] args) {
         Supplier supplier = new Supplier(1,"indofood","jakarta","021-99111");
         TransaksiPembelian transPembelian = new TransaksiPembelian(supplier);
-        transPembelian.setWaktuPembelian("08 April 2017");
+        Date hariIni = new Date();
+        transPembelian.setWaktuPembelian(hariIni);
         Pembelian p = new Pembelian(5000,"rinso");
         p.setJumlah(100);
         transPembelian.addPembelian(p);

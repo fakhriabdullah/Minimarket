@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Handoko on 5/2/2017.
@@ -6,7 +7,7 @@ import java.util.ArrayList;
 public class TransaksiPenjualan {
     int total, tunai;
     Karyawan kasir;
-    String waktuPembelian;
+    Date waktuPembelian;
 
     ArrayList<Penjualan> arrPenjualan = new ArrayList<>();
 
@@ -36,7 +37,7 @@ public class TransaksiPenjualan {
         this.tunai = tunai;
     }
 
-    public void setWaktuPembelian(String waktuPembelian) {
+    public void setWaktuPembelian(Date waktuPembelian) {
         this.waktuPembelian = waktuPembelian;
     }
 
@@ -55,7 +56,8 @@ public class TransaksiPenjualan {
         TransaksiPenjualan transP = new TransaksiPenjualan(kasir);
         Penjualan p = new Penjualan("Rinso", 25000);
         transP.setTunai(50000);
-        transP.waktuPembelian = "08 April 2017";
+        Date date = new Date();
+        transP.setWaktuPembelian(date);
         p.setJumlah(1);
         transP.addPenjualan(p);
         transP.printPenjualan();

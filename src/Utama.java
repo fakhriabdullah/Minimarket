@@ -112,5 +112,14 @@ public class Utama {
         transPembelian.print();
         minimarket.addPembelian(transPembelian);
         minimarket.printLaporanHariIni();
+
+        ///returrr pembelian
+        TransaksiPembelian transRetur = minimarket.daftarPembelian.get(1);
+        Retur retur = new Retur(1, transRetur);
+        Barang brgRetur= transRetur.arrPembelian.get(0).barang;
+        DetailRetur detail = new DetailRetur(brgRetur, brgRetur.hargaBeli);
+        detail.setJumlah(5);
+        retur.addDetailRetur(detail);
+        retur.print();
     }
 }

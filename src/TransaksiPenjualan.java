@@ -1,3 +1,5 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -44,13 +46,13 @@ public class TransaksiPenjualan {
     }
 
     public void printPenjualan() {
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        System.out.println("Nama Karyawan : "+kasir.namaKaryawan);
+        System.out.println("Waktu Penjualan : "+dateFormat.format(waktuPenjualan));
         for (Penjualan p : arrPenjualan) {
-            System.out.println("Nama Karyawan : " + kasir.namaKaryawan);
-            System.out.println("Tanggal : " + waktuPenjualan);
-            System.out.println("Total Penjualan : " + hitungTotalPenjualan());
-            System.out.println("Tunai : " + tunai);
-            System.out.println("Kembalian : " + hitungKembalianPenjualan());
+            printPenjualan();
         }
+        System.out.println("Total Penjualan : "+hitungTotalPenjualan());
     }
 
     public static void main(String[] args) {
@@ -63,5 +65,40 @@ public class TransaksiPenjualan {
 //        p.setJumlah(1);
 //        transP.addPenjualan(p);
 //        transP.printPenjualan();
+        Karyawan kasir = new Karyawan(1, "Budi", "Gerlong", "0888811212");
+        TransaksiPenjualan transaksiPenjualan = new TransaksiPenjualan(1,kasir);
+        Gudang gudang = new Gudang();
+        gudang.isiGudang();
+        Barang b = gudang.cariBarang(1);
+        if(b!=null)
+        {
+            Penjualan p = new Penjualan(b.idBarang, b.getHargaJual());
+            p.setJumlah(1);
+            transaksiPenjualan.addPenjualan(p);
+        }else
+        {
+            System.out.println("Stok Barang Habis");
+        }
+        b = gudang.cariBarang(1);
+        if(b!=null)
+        {
+            if(b!=null)
+            {
+                Penjualan p = new Penjualan(b, b.getHargaJual());
+                p.setJumlah(2);
+                transaksiPenjualan.addPenjualan(p);
+            }else
+            {
+                System.out.println("Stok Barang Habis");
+            }
+        }
+        transaksiPenjualan.setTunai(100000);
+        Date date = new Date();
+        transaksiPenjualan.setWaktuPenjualan(date);
+       // minimarket.addPenjualan(transaksiPenjualan);
+        System.out.println();
+        System.out.println("Nota Penjualan");
+        System.out.println("====================");
+        transaksiPenjualan.printPenjualan();
     }
 }

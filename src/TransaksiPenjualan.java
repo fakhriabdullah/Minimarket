@@ -11,6 +11,7 @@ public class TransaksiPenjualan {
     int total, tunai;
     Karyawan kasir;
     Date waktuPenjualan;
+    Member member;
 
     ArrayList<Penjualan> arrPenjualan = new ArrayList<>();
 
@@ -43,6 +44,10 @@ public class TransaksiPenjualan {
 
     public void setWaktuPenjualan(Date waktuPenjualan) {
         this.waktuPenjualan = waktuPenjualan;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
     }
 
     public void printPenjualan() {

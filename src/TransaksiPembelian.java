@@ -48,7 +48,7 @@ public class TransaksiPembelian {
     }
 
     public static void main(String[] args) {
-        Supplier supplier = new Supplier(1,"indofood","jakarta","021-99111");
+        Supplier supplier = new Supplier(1,"indiefood","jakarta","021-99111");
         TransaksiPembelian transPembelian = new TransaksiPembelian(1,supplier);
         Date hariIni = new Date();
         transPembelian.setWaktuPembelian(hariIni);
